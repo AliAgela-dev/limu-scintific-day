@@ -1,7 +1,9 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:limuscintificday/helper/constant.dart';
 import 'package:limuscintificday/helper/function_helper.dart';
+import 'package:limuscintificday/pages/quiz_page.dart';
 import 'package:limuscintificday/pages/result_page.dart';
 import 'package:limuscintificday/widgets/main_button_widget.dart';
 
@@ -10,8 +12,10 @@ class WrongPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-   backgroundColor: red,
+    final player = AudioPlayer();
+    player.play(AssetSource('audio/wrong.mp3'));
+    return Scaffold(
+      backgroundColor: red,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(18.0),
@@ -26,32 +30,43 @@ class WrongPage extends StatelessWidget {
               Text(
                 'Wrong answer, but\n      donot give up',
                 style: GoogleFonts.poppins(
-                  
                   fontSize: 25,
                   fontWeight: FontWeight.w800,
                   color: Colors.white,
                 ),
               ),
               SizedBox(height: getScreenSize(context).height * 0.2),
-            SizedBox(
-              width: double.infinity,
-              child: Mainbutton(
-                text: 'Next',
-                textsize: 20,
-                paddingbutten: const EdgeInsets.symmetric(vertical: 8.0),
-                ontap: () {
-                 MaterialPageRoute(builder: (context) => ResultScreen());
-
-                },
-                textcolor: red,
-                backgroundColor: Colors.white,
-              ),
-            )
+              SizedBox(
+                width: double.infinity,
+                child: Mainbutton(
+                  text: 'Next',
+                  textsize: 20,
+                  paddingbutten: const EdgeInsets.symmetric(vertical: 8.0),
+                  ontap: () {
+                    if (questionNumber == questions.length - 1) {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => ResultScreen()),
+                      );
+                    } else {
+                      questionNumber++;
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => QuizScreen(
+                                  onScreenQuestionIndex: questionNumber,
+                                )),
+                      );
+                    }
+                  },
+                  textcolor: red,
+                  backgroundColor: Colors.white,
+                ),
+              )
             ],
           ),
         ),
       ),
-      
     );
   }
 }

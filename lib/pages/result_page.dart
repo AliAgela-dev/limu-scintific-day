@@ -50,8 +50,8 @@ class ResultScreen extends StatelessWidget {
               SizedBox(height: 10),
               Text(
              //   '$score/$totalQuestions',
-             "5/5",
-               style: GoogleFonts.poppins(
+              "${correctAnswers}/${questions.length }",
+                style: GoogleFonts.poppins(
                   fontSize: 40,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
@@ -73,7 +73,10 @@ class ResultScreen extends StatelessWidget {
                 child: Mainbutton(text: "Home",
                 backgroundColor: Colors.white,
                 textcolor: blue2,
-                 ontap: (){ Navigator.push(
+                  ontap: (){
+                  correctAnswers = 0;
+                  questionNumber = 0;
+                  Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => OnboardingPage()));
                   }

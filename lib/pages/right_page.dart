@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:limuscintificday/helper/constant.dart';
 import 'package:limuscintificday/helper/function_helper.dart';
+import 'package:limuscintificday/pages/quiz_page.dart';
 import 'package:limuscintificday/pages/result_page.dart';
 import 'package:limuscintificday/widgets/main_button_widget.dart';
 
@@ -10,6 +12,8 @@ class RightPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final player = AudioPlayer();
+    player.play(AssetSource('audio/correct.mp3'));
     return  Scaffold(
       backgroundColor: green,
       body: Center(
@@ -40,10 +44,19 @@ class RightPage extends StatelessWidget {
                 textsize: 20,
                 paddingbutten: const EdgeInsets.symmetric(vertical: 8.0),
                 ontap: () {
-                  Navigator.push(
+                  correctAnswers++;
+                  if (questionNumber==questions.length-1) 
+                  {Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => ResultScreen()),
-                  );
+                  );}
+                  else{
+                    questionNumber++;
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => QuizScreen(onScreenQuestionIndex:questionNumber ,)),
+                      );
+                  }
                 },
                 textcolor: green,
                 backgroundColor: Colors.white,

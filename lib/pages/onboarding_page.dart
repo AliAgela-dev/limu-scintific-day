@@ -98,9 +98,13 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     vertical: 15,
                   ),
                   ontap: () {
+                    questions.shuffle();
+                    correctAnswers = 0;
+                    questionNumber = 0;
+
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => QuizScreen()),
+                      MaterialPageRoute(builder: (context) => QuizScreen(onScreenQuestionIndex: questionNumber,)),
                     );
                   },
                 ),
