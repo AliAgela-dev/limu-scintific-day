@@ -38,6 +38,9 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   audioplayers: ^6.1.1
+  rxdart: ^0.28.0
+  rflutter_alert: ^2.0.7
+  get_it: ^8.0.3
 
 dev_dependencies:
   flutter_test:
