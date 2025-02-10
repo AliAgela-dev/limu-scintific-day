@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:limuscintificday/pages/onboarding_page.dart';
-import 'package:limuscintificday/pages/splash_page.dart';
-import 'package:limuscintificday/pages/start.dart';
-import 'package:limuscintificday/pages/x_o_page.dart';
+import 'package:limuscintificday/pages/hang_man.dart';
+
 import 'package:limuscintificday/services/provider.dart';
 
 void main() {
@@ -16,11 +14,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: StartPage(
-        key: Key('start'),
-      ),
+      home: HangMan(),
     );
   }
 }
