@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:limuscintificday/helper/constant.dart';
 import 'package:limuscintificday/models/game.dart';
 import 'package:limuscintificday/widgets/game_confetti.dart';
 import 'package:limuscintificday/widgets/memory_card.dart';
@@ -96,11 +97,12 @@ class _GameBoardMobileState extends State<GameBoardMobile> {
                 height: 20,
               ),
               RestartGame(
+                
                 isGameOver: game.isGameOver,
                 pauseGame: () => pauseTimer(),
                 restartGame: () => _resetGame(),
                 continueGame: () => startTimer(),
-                color: Colors.amberAccent[700]!,
+                color: blue2,
               ),
               GameTimerMobile(
                 time: duration,

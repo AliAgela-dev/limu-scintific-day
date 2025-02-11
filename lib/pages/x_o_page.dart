@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:limuscintificday/helper/constant.dart';
+import 'package:limuscintificday/pages/game_menu_page.dart';
 import 'package:limuscintificday/services/board.dart';
 import 'package:limuscintificday/services/provider.dart';
 import 'package:limuscintificday/widgets/board.dart';
@@ -142,9 +143,9 @@ class _XOPageState extends State<XOPage> {
                               IconButton(
                                 icon: Icon(Icons.home),
                                 onPressed: () {
-                                  // boardService.newGame();
-                                  // Navigator.of(context)
-                                  //     .popUntil((route) => route.isFirst);
+                              Navigator.of(context).pushReplacement(
+                                MaterialPageRoute(builder: (context) => GameMenuScreen()),
+                              );
                                 },
                                 color: Colors.black87,
                                 iconSize: 30,

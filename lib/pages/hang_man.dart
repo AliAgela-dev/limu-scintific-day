@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:limuscintificday/helper/constant.dart';
 import 'package:limuscintificday/models/hang_game.dart';
+import 'package:limuscintificday/pages/game_menu_page.dart';
 import 'package:limuscintificday/widgets/figure_image.dart';
 import 'package:limuscintificday/widgets/letter.dart';
 
@@ -47,14 +48,34 @@ class _HangManState extends State<HangMan> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(203, 0, 0, 1),
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("Hangman"),
-        elevation: 0,
-        centerTitle: true,
-        backgroundColor: green,
+        title: Text("Hangman Game ",
+        style: TextStyle(
+          color: Colors.black,
+          fontSize: 20.0,
+          fontWeight: FontWeight.bold,
+        ),
+        ),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.black),
+          onPressed: () {
+    Navigator.of(context).pushAndRemoveUntil(
+      MaterialPageRoute(
+        builder: (BuildContext context) {
+          return GameMenuScreen(); 
+        },
+      ),
+      (Route<dynamic> route) => false,
+    );
+        },
+      ),
+      elevation: 0,
+      centerTitle: true,
+      backgroundColor: Colors.white,
       ),
       body: Column(
+        
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -114,8 +135,20 @@ class _HangManState extends State<HangMan> {
                                   context: context,
                                   builder: (builder) {
                                     return AlertDialog(
-                                      title: const Text("Game Over"),
-                                      content: const Text("You lost the game"),
+                                      title: Row(
+                                        children: [
+                                          const Text("Game Over",style: TextStyle(color: red),),
+                                          SizedBox(width: 70,),
+                                          Icon(
+                                            Icons.sentiment_very_dissatisfied,
+                                            color: red,
+                                            size: 40,
+                                          )
+                                        ],
+                                      ),
+                                      content: const Text("You lost the game"
+                                      
+                                      ),
                                       actions: [
                                         TextButton(
                                             onPressed: () {
@@ -128,7 +161,11 @@ class _HangManState extends State<HangMan> {
                                                     .toUpperCase();
                                               });
                                             },
-                                            child: const Text("Play Again"))
+                                            child: const Text("Play Again",
+                                             style:TextStyle(
+                                      color: blue2,
+                                      fontWeight: FontWeight.bold,
+                                            )))
                                       ],
                                     );
                                   });
@@ -138,7 +175,17 @@ class _HangManState extends State<HangMan> {
                                 !HangGame.selectedChar.contains(element))) {
                               showDialog(context: context, builder: (builder){
                                 return AlertDialog(
-                                  title: const Text("Congratulations"),
+                                  title: Row(
+                                    children: [
+                                      const Text("Congratulations",style: TextStyle(color: green),),
+                                      SizedBox(width: 10,),
+                                      Icon(
+                                        Icons.sentiment_very_satisfied,
+                                        color: green,
+                                        size: 40,
+                                      ),
+                                    ],
+                                  ),
                                   content: const Text("You won the game"),
                                   actions: [
                                     TextButton(onPressed: (){
@@ -150,7 +197,13 @@ class _HangManState extends State<HangMan> {
                                                     .first
                                                     .toUpperCase();
                                       });
-                                    }, child: Text("Play Again"))
+                                    }, child: Text("Play Again",
+                                    style:TextStyle(
+                                      color: blue2,
+                                      fontWeight: FontWeight.bold,
+                                    )
+                                     ,
+                                    ))
                                   ],
                                 );
                               });
@@ -169,8 +222,8 @@ class _HangManState extends State<HangMan> {
                     ),
                   ),
                   fillColor: HangGame.selectedChar.contains(e)
-                      ? Colors.black87
-                      : Colors.blue,
+                      ? blue4
+                      : blue2,
                 );
               }).toList(),
             ),

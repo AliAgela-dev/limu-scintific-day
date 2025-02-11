@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:limuscintificday/helper/constant.dart';
+import 'package:limuscintificday/pages/game_menu_page.dart';
 import 'package:limuscintificday/pages/startup_page.dart';
 import 'package:limuscintificday/widgets/game_button.dart';
 
@@ -19,7 +20,7 @@ class GameControlsBottomSheet extends StatelessWidget {
           const Center(
             child: Text(
               'PAUSE',
-              style: TextStyle(fontSize: 24, color: Colors.white),
+              style: TextStyle(fontSize: 24, color:Colors.black),
             ),
           ),
           const SizedBox(height: 10),
@@ -42,7 +43,7 @@ class GameControlsBottomSheet extends StatelessWidget {
               Navigator.of(context).pushAndRemoveUntil(
                 MaterialPageRoute(
                   builder: (BuildContext context) {
-                    return const StartUpPage();
+                    return  GameMenuScreen();
                   },
                 ),
                 (Route<dynamic> route) => false,

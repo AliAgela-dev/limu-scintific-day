@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:limuscintificday/helper/constant.dart';
 
 class GameBestTimeMobile extends StatelessWidget {
   const GameBestTimeMobile({
@@ -20,7 +21,7 @@ class GameBestTimeMobile extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15),
       ),
-      color: Colors.greenAccent[700],
+      color:blue4,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Row(
@@ -29,12 +30,14 @@ class GameBestTimeMobile extends StatelessWidget {
               flex: 1,
               child: Icon(
                 Icons.celebration,
+                color: green,
                 size: 40,
               ),
             ),
             Expanded(
               flex: 2,
               child: Text(
+
                 textAlign: TextAlign.center,
                 Duration(seconds: bestTime)
                     .toString()
@@ -43,6 +46,7 @@ class GameBestTimeMobile extends StatelessWidget {
                     .padLeft(8, "0"),
                 style: const TextStyle(
                   fontSize: 28.0,
+                  color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
               ),

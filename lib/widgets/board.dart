@@ -50,7 +50,7 @@ class _BoardState extends State<Board> {
             Widget body = state.value == 'X'
                 ? X(50, 20)
                 : (state.value == "O"
-                    ? O(50, green)
+                    ? O(50, red)
                     : Row(
                         children: <Widget>[X(50, 20), O(50, green)],
                       ));
@@ -149,7 +149,7 @@ class _BoardState extends State<Board> {
             ? null
             : item == 'X'
                 ? X(50, 13)
-                : O(50, green),
+                : O(50, red),
       ),
     );
   }

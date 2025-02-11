@@ -35,8 +35,8 @@ class StartPage extends StatelessWidget {
                 end: Alignment.bottomCenter,
                 stops: [0.1, 0.65],
                 colors: [
-                  green,
-                  red,
+                  blue2,
+                  blue4,
                 ],
               ),
             ),
@@ -68,9 +68,9 @@ class StartPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Btn(
-                        gradient: [green, red],
-                        key: Key('startBtn'),
+                        gradient: [blue2, blue4],
 
+                        key: Key('startBtn'),
                         onTap: () {
                           boardService.gameMode$.add(GameMode.Solo);
                           soundService.playSound('click');
@@ -82,37 +82,38 @@ class StartPage extends StatelessWidget {
                             ),
                           );
                         },
-                        height: 40,
+                        height: 45,
                         width: 250,
-                        borderRadius: 250,
-                        color: Colors.white,
+                        borderRadius: 14,
+                        color: blue2,
                         child: Text(
                           "single player".toUpperCase(),
                           style: TextStyle(
-                              color: Colors.black.withOpacity(.8),
+                              color:Colors.white,
                               fontSize: 16,
                               fontWeight: FontWeight.w700),
                         ),
                       ),
                       SizedBox(height: 30),
                       Btn(
-                        gradient: [green, red],
+                        gradient: [blue2, blue4],
                         key: Key('startBtn2'),
                         onTap: () {
                           boardService.gameMode$.add(GameMode.Multi);
                           soundService.playSound('click');
 
+
                           Navigator.push(
                             context,
                             CupertinoPageRoute(
-                              builder: (context) => XOPage(),
+                              builder: (context) => PickPage(),
                             ),
                           );
                         },
                         color: Colors.white,
-                        height: 40,
+                        height: 45,
                         width: 250,
-                        borderRadius: 250,
+                        borderRadius: 14,
                         child: Text(
                           "with a friend".toUpperCase(),
                           style: TextStyle(
@@ -122,27 +123,7 @@ class StartPage extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: 60),
-                      Btn(
-                        gradient: [green, red],
-                        key: Key("settingsBtn"),
-                        onTap: () {
-                          soundService.playSound('click');
-                          Navigator.push(
-                            context,
-                            CupertinoPageRoute(
-                              fullscreenDialog: true,
-                              builder: (context) => SettingsPage(
-                                key: UniqueKey(),
-                              ),
-                            ),
-                          );
-                        },
-                        color: Colors.white,
-                        height: 50,
-                        width: 50,
-                        borderRadius: 25,
-                        child: Icon(Icons.settings),
-                      ),
+              
                     ],
                   ),
                 ),

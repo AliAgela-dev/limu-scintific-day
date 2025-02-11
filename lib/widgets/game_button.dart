@@ -29,12 +29,12 @@ class GameButton extends StatelessWidget {
           textStyle: TextStyle(fontSize: fontSize),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
-              Radius.circular(height / 2),
+              Radius.circular(12),
             ),
           ),
         ),
         onPressed: onPressed,
-        child: Text(title),
+        child: Text(title,style: TextStyle(color: Colors.white),),
       ),
     );
   }

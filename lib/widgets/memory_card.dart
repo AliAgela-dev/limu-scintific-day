@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:limuscintificday/helper/constant.dart';
 import 'package:limuscintificday/models/card_item.dart';
 
 class MemoryCard extends StatelessWidget {
@@ -28,15 +29,14 @@ class MemoryCard extends StatelessWidget {
     return InkWell(
       onTap: _handleCardTap,
       child: Card(
-        elevation: 8,
         clipBehavior: Clip.antiAlias,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
         ),
         color:
             card.state == CardState.visible || card.state == CardState.guessed
-                ? card.color
-                : Colors.grey,
+              ? card.color
+              : (index % 2 == 0 ? blue2 : blue4),
         child: Center(
           child: card.state == CardState.hidden
               ? null

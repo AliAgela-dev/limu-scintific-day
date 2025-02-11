@@ -51,6 +51,7 @@ class RestartGame extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
+      
       color: color,
       icon: (isGameOver)
           ? const Icon(Icons.replay_circle_filled)

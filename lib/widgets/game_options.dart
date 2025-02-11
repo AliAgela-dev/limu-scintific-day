@@ -24,12 +24,17 @@ class GameOptions extends StatelessWidget {
         return Padding(
           padding: const EdgeInsets.all(10.0),
           child: GameButton(
+
             onPressed: () => Navigator.of(context).pushAndRemoveUntil(
                 _routeBuilder(context, level['level']),
                 (Route<dynamic> route) => false),
             title: level['title'],
-            color: level['color']![700]!,
+            color: level['color']!,
             width: 250,
+            height: 50,
+
+
+            
           ),
         );
       }).toList(),

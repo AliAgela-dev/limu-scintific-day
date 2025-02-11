@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:limuscintificday/helper/constant.dart';
 import 'package:limuscintificday/helper/function_helper.dart';
 import 'package:limuscintificday/pages/Onboarding_page.dart';
+import 'package:limuscintificday/pages/game_menu_page.dart';
 import 'package:limuscintificday/widgets/main_button_widget.dart';
 
 class ResultScreen extends StatelessWidget {
@@ -70,7 +71,7 @@ class ResultScreen extends StatelessWidget {
               SizedBox(height: getScreenSize(context).height * 0.07),
               SizedBox(
                 width: double.infinity,
-                child: Mainbutton(text: "Home",
+                child: Mainbutton(text: "Next",
                 backgroundColor: Colors.white,
                 textcolor: blue2,
                   ontap: (){
@@ -78,7 +79,7 @@ class ResultScreen extends StatelessWidget {
                   questionNumber = 0;
                   Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => OnboardingPage()));
+                  MaterialPageRoute(builder: (context) => GameMenuScreen()));
                   }
                 )
               

@@ -8,8 +8,13 @@ Widget letter(String character, bool hidden) {
     width: 50,
     padding: EdgeInsets.all(8.0),
     decoration: BoxDecoration(
-      color: green,
-      borderRadius: BorderRadius.circular(4.0),
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(8.0),
+      border: Border.all(
+        color: Colors.black,
+        width: 1.0,
+      ),
+      
     ),
     child: Center(
       child: Visibility(
@@ -17,9 +22,9 @@ Widget letter(String character, bool hidden) {
         child: Text(
           character,
           style: TextStyle(
-            color: Colors.white,
+            color: Colors.black,
             fontWeight: FontWeight.bold,
-            fontSize: 40.0,
+            fontSize: 35.0,
           ),
         ),
       ),

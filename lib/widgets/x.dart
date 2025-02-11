@@ -27,7 +27,7 @@ class X extends StatelessWidget {
                     end: Alignment.centerRight,
                     stops: [0.1, 0.8],
                     colors: [
-                      red,
+                      green,
                       green,
                     ],
                   ),
@@ -51,7 +51,7 @@ class X extends StatelessWidget {
                     stops: [0.1, 0.8],
                     colors: [
                      green,
-                      red,
+                    green,
                     ],
                   ),
                 ),

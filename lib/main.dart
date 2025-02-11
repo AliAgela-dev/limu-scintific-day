@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:limuscintificday/pages/game_menu_page.dart';
 import 'package:limuscintificday/pages/hang_man.dart';
+import 'package:limuscintificday/pages/memory_match_page.dart';
+import 'package:limuscintificday/pages/onboarding_page.dart';
+import 'package:limuscintificday/pages/start.dart';
+import 'package:limuscintificday/pages/startup_page.dart';
 
 import 'package:limuscintificday/services/provider.dart';
 
@@ -14,9 +19,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HangMan(),
+      home:OnboardingPage(),
     );
   }
 }

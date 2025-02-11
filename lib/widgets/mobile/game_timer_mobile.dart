@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:limuscintificday/helper/constant.dart';
 
 class GameTimerMobile extends StatelessWidget {
   const GameTimerMobile({
@@ -20,7 +21,7 @@ class GameTimerMobile extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15),
       ),
-      color: Colors.red[700],
+      color: blue2,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Row(
@@ -30,6 +31,7 @@ class GameTimerMobile extends StatelessWidget {
               child: Icon(
                 Icons.timer,
                 size: 40,
+                color: red,
               ),
             ),
             Expanded(
@@ -38,6 +40,7 @@ class GameTimerMobile extends StatelessWidget {
                 textAlign: TextAlign.center,
                 time.toString().split('.').first.padLeft(8, "0"),
                 style: const TextStyle(
+                  color: Colors.white,
                   fontSize: 28.0,
                   fontWeight: FontWeight.bold,
                 ),

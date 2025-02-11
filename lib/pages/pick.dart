@@ -30,6 +30,7 @@ class _PickPageState extends State<PickPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.white,
         body: Container(
           width: MediaQuery.of(context).size.width,
           child: Column(
@@ -39,7 +40,7 @@ class _PickPageState extends State<PickPage> {
               Text(
                 "Pic Your Side",
                 style: TextStyle(
-                  color: Colors.black,
+                  color: blue2,
                   fontWeight: FontWeight.w700,
                   fontSize: 30,
                 ),
@@ -68,7 +69,7 @@ class _PickPageState extends State<PickPage> {
                           style: TextStyle(
                               color: Colors.black87,
                               fontWeight: FontWeight.w700,
-                              fontSize: 16),
+                              fontSize: 20),
                         ),
                       ),
                     ],
@@ -92,7 +93,7 @@ class _PickPageState extends State<PickPage> {
                           style: TextStyle(
                               color: Colors.black87,
                               fontWeight: FontWeight.w700,
-                              fontSize: 16),
+                              fontSize: 20),
                         ),
                       ),
                     ],
@@ -100,8 +101,7 @@ class _PickPageState extends State<PickPage> {
                 ],
               ),
               Btn(
-                color: Colors.white,
-                gradient: [green, red],
+                color: blue2,
                 key: Key('continueBtn'),
                 onTap: () {
                   boardService.resetBoard();
@@ -119,9 +119,9 @@ class _PickPageState extends State<PickPage> {
                     ),
                   );
                 },
-                height: 40,
+                height: 50,
                 width: 250,
-                borderRadius: 200,
+                borderRadius: 14,
                
                 child: Text(
                   "continue".toUpperCase(),
